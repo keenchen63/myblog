@@ -29,6 +29,7 @@
 ## 三、 环境准备
 ### 确定测试目标
 如下图网络环境，需测试**接入层**至**核心层**的有线无线网络性能，则需将服务器放置在**核心层**。
+
 <img src="img/1.png" alt="测试拓扑" width="400">
 
 ### 测试设备
@@ -55,6 +56,7 @@ iperf3 -s         ### 以服务端模式运行
 iperf3 -s -D      ### 以服务端模式运行并开启进程守护
 ```
 如下图所示，iPerf3服务端以运行并默认监听5201端口
+
 <img src="img/2.png" alt="运行iPerf3服务端" width="500">
 
 **Windows** *（官方不建议）*
@@ -70,6 +72,7 @@ iperf3 -s         ### 以服务端模式运行
 iperf3 -s -D      ### 以服务端模式运行并开启进程守护
 ```
 如下图所示，iPerf3服务端以运行并默认监听5201端口
+
 <img src="img/3.png" alt="运行iPerf3服务端" width="450">
 
 ______
@@ -88,6 +91,7 @@ iperf3 -c <Server_IP>         ### 基本TCP吞吐量测试
 iperf3 -c <Server_IP> -t 30 -f m  ### 指定测试持续时间为 30 秒，单位为Mbits/s
 ```
 下图为TCP吞吐量测试结果，输出结果中包含多项参数指标：
+
 <img src="img/4.png" alt="TCP测试结果" width="550">
 
    - Interval：表示测试的时间段，从 0 到 5 秒，默认每隔 1 秒汇报一次结果;
@@ -103,6 +107,7 @@ iperf3 -c <Server_IP> -t 30 -f m  ### 指定测试持续时间为 30 秒，单�
 iperf3 -c <Server_IP> -u -b 100M      ### UDP模式测试，指定目标带宽为 100 Mbps
 ```
 下图为UDP抖动、丢包率测试结果，输出结果中包含多项参数指标：
+
 <img src="img/5.png" alt="UDP测试结果" width="550">
 
    - Interval：表示测试的时间段，从 0 到 5 秒，默认每隔 1 秒汇报一次结果;
@@ -114,6 +119,7 @@ iperf3 -c <Server_IP> -u -b 100M      ### UDP模式测试，指定目标带宽�
 
 **移动端**
 - Android系统使用华为`CloudCamups APP`
+
 <img src="img/10.png" alt="UDP测试结果" width="550">
 - iOS系统自行寻找兼容iPerf3的APP
 
@@ -133,6 +139,7 @@ ethr -h           ### 查看帮助
 ethr -s -ui       ### 以服务端模式运行ethr，并开启ui界面
 ```
 如下图所示，ethr服务端以运行并默认监听8888端口
+
 <img src="img/6.png" alt="运行iPerf3服务端" width="800">
 
 **Windows**
@@ -146,6 +153,7 @@ ethr -h           ### 查看帮助
 ethr -s           ### 以服务端模式运行ethr
 ```
 如下图所示，ethr服务端以运行并默认监听8888端口
+
 <img src="img/9.png" alt="运行iPerf3服务端" width="500">
 
 #### 客户端
@@ -157,6 +165,7 @@ ethr -s           ### 以服务端模式运行ethr
 ethr -c <Server_IP> -d 5s        ### 测试TCP吞吐量，维持时间5秒
 ```
 下图为TCP吞吐量测试结果，输出结果中包含多项参数指标：
+
 <img src="img/7.png" alt="TCP测试结果" width="550">
 
    - Protocol：测试协议，默认为TCP，可通过`-p`参数指定
@@ -183,6 +192,7 @@ sudo docker run -d --name=speedtest -p 80:80 ghcr.io/librespeed/speedtest:latest
 - 打开浏览器，建议使用Chrome/Edge等主流高性能浏览器
 - 访问http://<Server_ip>:80
 - 开始测速
+
 <img src="img/11.png" alt="Speedtest测试结果" width="550">
 
 ### 个人建议
